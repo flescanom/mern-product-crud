@@ -1,0 +1,30 @@
+{
+  "name": "mern-product-crud",
+  "version": "1.0.0",
+  "description": "Aplicacion MERN (MySQL, Express, React, Nodes) con un CRUD de productos",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flescanom/mern-product-crud.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/flescanom/mern-product-crud/issues"
+  },
+  "homepage": "https://github.com/flescanom/mern-product-crud#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.14.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
