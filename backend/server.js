@@ -1,14 +1,22 @@
 import express from "express";
-import { PORT } from "./config.js"
 
+import { PORT } from "./config.js";
+import { db } from "./db.js";
+
+import { productsRouter } from "./routes/products.route.js";
+
+// Creating server
 const app = express();
 
-app.get('/:id', (req, res) => { 
-    console.log(req.params.id);
-    res.send('Algun texto')});
+// Read and parser body request
+app.use(express.json());
 
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en el puerto ${PORT}`);
+db.sync().then(() => {
+  console.log("Database is synchronized");
 });
 
+app.use("/api/products", productsRouter);
 
+app.listen(PORT, () => {
+  console.log(`Server is running in port ${PORT}`);
+});
