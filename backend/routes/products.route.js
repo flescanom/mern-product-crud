@@ -5,6 +5,7 @@ import { getProducts,
   createProduct,
   updateProduct,
   deleteProduct, } from "../controllers/products.controller.js";
+import { validateFields } from "../middlewares/validate-flieds.js";
 
 export const productsRouter = Router();
 
@@ -15,7 +16,7 @@ productsRouter.get('/', getProducts);
 productsRouter.get('/:id', getProduct);
 
 // Crea un producto nuevo
-productsRouter.post('/', createProduct);
+productsRouter.post('/', validateFields, createProduct);
 
 // Actualiza un producto por id
 productsRouter.put('/:id', updateProduct);

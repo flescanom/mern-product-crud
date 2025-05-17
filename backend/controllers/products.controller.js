@@ -40,7 +40,6 @@ export const getProduct = async (req, res) => {
 export const createProduct = async (req, res) => {
   try {
     const newProduct = await Product.create({ ...req.body });
-    console.log(newProduct.toJSON());
 
     if (newProduct) {
       res.status(201).json({

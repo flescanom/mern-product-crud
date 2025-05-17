@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import { db }  from "../db.js"
+import { db }  from "../config/db.js"
 
 export const Product = db.define('Product', {
     name: {
