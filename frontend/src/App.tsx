@@ -1,11 +1,19 @@
-import { Button } from "@/components/ui/button"
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
+import { ProductsProvider } from "./context/productsContext";
 
 function App() {
+  
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-svh">
-      <Button>Click me</Button>
-    </div>
-  )
+    <ProductsProvider>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </ProductsProvider>
+  );
 }
 
-export default App
+export default App;

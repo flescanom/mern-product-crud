@@ -96,8 +96,6 @@ export const deleteProduct = async (req, res) => {
   try {
     const productFromDB = await Product.findByPk(uid);
 
-    console.log(productFromDB);
-
     if (!productFromDB) {
       return res.status(404).json({
         ok: false,
